@@ -2,9 +2,9 @@
 layout: default
 post: true
 ---
-
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
+    {% include meta.html %}
     <h1 itemprop="headline">{{ page.title }}</h1>
     {% if page.image %}
       <figure>
@@ -12,7 +12,9 @@ post: true
         <figcaption>{{ image }}</figcaption>
       </figure>
     {% endif %}
-    {% include meta.html %}
+
+    <!-- Reading time ~ {{ page.content | number_of_words | divided_by: 180 }}  min. -->
+
     <p>{{ page.resumo }}</p>
     <span class="keywords hidden" itemprop="keywords">
       {{page.keywords}}
